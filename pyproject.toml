@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "crystal-elastic-workbench"
+version = "0.1.0"
+description = "GUI and numerical toolkit for crystal elastic tensor analysis from Cij."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "openpyxl>=3.1",
+    "matplotlib>=3.7",
+    "pyvista>=0.43",
+    "vtk>=9.2",
+    "PySide6>=6.6",
+    "imageio>=2.31",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7.4"]
+
+[project.scripts]
+crystal-elastic-workbench = "crystal_elastic_workbench.gui:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
